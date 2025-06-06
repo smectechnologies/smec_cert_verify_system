@@ -1,0 +1,24 @@
+[06-Jun-2025 11:54:04 UTC] PHP Fatal error:  Uncaught Error: Class "Kint\Renderer\RichRenderer" not found in D:\certificate_verification\app\Config\Boot\production.php:48
+Stack trace:
+#0 D:\certificate_verification\system\Boot.php(162): require_once()
+#1 D:\certificate_verification\system\Boot.php(51): CodeIgniter\Boot::loadEnvironmentBootstrap(Object(Config\Paths))
+#2 D:\certificate_verification\public\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#3 D:\certificate_verification\system\rewrite.php(44): require_once('D:\\certificate_...')
+#4 {main}
+  thrown in D:\certificate_verification\app\Config\Boot\production.php on line 48
+[06-Jun-2025 11:54:14 UTC] PHP Fatal error:  Uncaught Error: Class "Kint\Renderer\RichRenderer" not found in D:\certificate_verification\app\Config\Boot\production.php:48
+Stack trace:
+#0 D:\certificate_verification\system\Boot.php(162): require_once()
+#1 D:\certificate_verification\system\Boot.php(51): CodeIgniter\Boot::loadEnvironmentBootstrap(Object(Config\Paths))
+#2 D:\certificate_verification\public\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#3 D:\certificate_verification\system\rewrite.php(44): require_once('D:\\certificate_...')
+#4 {main}
+  thrown in D:\certificate_verification\app\Config\Boot\production.php on line 48
+[06-Jun-2025 11:55:17 UTC] PHP Fatal error:  Uncaught Error: Class "Kint\Renderer\RichRenderer" not found in D:\certificate_verification\app\Config\Boot\production.php:48
+Stack trace:
+#0 D:\certificate_verification\system\Boot.php(162): require_once()
+#1 D:\certificate_verification\system\Boot.php(51): CodeIgniter\Boot::loadEnvironmentBootstrap(Object(Config\Paths))
+#2 D:\certificate_verification\public\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#3 D:\certificate_verification\system\rewrite.php(44): require_once('D:\\certificate_...')
+#4 {main}
+  thrown in D:\certificate_verification\app\Config\Boot\production.php on line 48

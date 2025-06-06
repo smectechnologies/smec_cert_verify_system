@@ -1,0 +1,128 @@
+ERROR - 2025-06-06 09:41:43 --> mysqli_sql_exception: Duplicate key name 'certificate_number' in D:\certificate_verification\system\Database\MySQLi\Connection.php:327
+Stack trace:
+#0 D:\certificate_verification\system\Database\MySQLi\Connection.php(327): mysqli->query('CREATE TABLE `c...', 0)
+#1 D:\certificate_verification\system\Database\BaseConnection.php(738): CodeIgniter\Database\MySQLi\Connection->execute('CREATE TABLE `c...')
+#2 D:\certificate_verification\system\Database\BaseConnection.php(652): CodeIgniter\Database\BaseConnection->simpleQuery('CREATE TABLE `c...')
+#3 D:\certificate_verification\system\Database\Forge.php(570): CodeIgniter\Database\BaseConnection->query('CREATE TABLE `c...')
+#4 D:\certificate_verification\app\Database\Migrations\2024-03-20-000001_create_certificates_table.php(57): CodeIgniter\Database\Forge->createTable('certificates')
+#5 D:\certificate_verification\system\Database\MigrationRunner.php(876): App\Database\Migrations\CreateCertificatesTable->up()
+#6 D:\certificate_verification\system\Database\MigrationRunner.php(182): CodeIgniter\Database\MigrationRunner->migrate('up', Object(stdClass))
+#7 D:\certificate_verification\system\Commands\Database\Migrate.php(85): CodeIgniter\Database\MigrationRunner->latest(NULL)
+#8 D:\certificate_verification\system\CLI\Commands.php(74): CodeIgniter\Commands\Database\Migrate->run(Array)
+#9 D:\certificate_verification\system\CLI\Console.php(47): CodeIgniter\CLI\Commands->run('migrate', Array)
+#10 D:\certificate_verification\system\Boot.php(360): CodeIgniter\CLI\Console->run()
+#11 D:\certificate_verification\system\Boot.php(104): CodeIgniter\Boot::runCommand(Object(CodeIgniter\CLI\Console))
+#12 D:\certificate_verification\spark(87): CodeIgniter\Boot::bootSpark(Object(Config\Paths))
+#13 {main}
+CRITICAL - 2025-06-06 16:59:16 --> CodeIgniter\View\Exceptions\ViewException: Invalid file: "admin/edit_certificate.php"
+[Method: GET, Route: admin/edit_certificate/2]
+in SYSTEMPATH\Exceptions\FrameworkException.php on line 39.
+ 1 SYSTEMPATH\View\View.php(212): CodeIgniter\Exceptions\FrameworkException::forInvalidFile('admin/edit_certificate.php')
+ 2 SYSTEMPATH\Common.php(1173): CodeIgniter\View\View->render('admin/edit_certificate', [], true)
+ 3 APPPATH\Controllers\Admin.php(202): view('admin/edit_certificate', [...])
+ 4 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Admin->editCertificate('2')
+ 5 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin))
+ 6 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+ 8 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 9 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+10 SYSTEMPATH\rewrite.php(44): require_once('D:\\certificate_verification\\public\\index.php')
+CRITICAL - 2025-06-06 17:02:54 --> ErrorException: Undefined array key "work_dates"
+[Method: GET, Route: admin/dashboard]
+in APPPATH\Views\admin\dashboard.php on line 123.
+ 1 APPPATH\Views\admin\dashboard.php(123): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "work_dates"', 'D:\\certificate_verification\\app\\Views\\admin\\dashboard.php', 123)
+ 2 SYSTEMPATH\View\View.php(224): include('D:\\certificate_verification\\app\\Views\\admin\\dashboard.php')
+ 3 SYSTEMPATH\View\View.php(227): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1173): CodeIgniter\View\View->render('admin/dashboard', [], true)
+ 5 APPPATH\Controllers\Admin.php(38): view('admin/dashboard', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Admin->dashboard()
+ 7 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin))
+ 8 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+12 SYSTEMPATH\rewrite.php(44): require_once('D:\\certificate_verification\\public\\index.php')
+CRITICAL - 2025-06-06 17:03:29 --> ErrorException: Undefined array key "work_dates"
+[Method: GET, Route: admin/dashboard]
+in APPPATH\Views\admin\dashboard.php on line 123.
+ 1 APPPATH\Views\admin\dashboard.php(123): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "work_dates"', 'D:\\certificate_verification\\app\\Views\\admin\\dashboard.php', 123)
+ 2 SYSTEMPATH\View\View.php(224): include('D:\\certificate_verification\\app\\Views\\admin\\dashboard.php')
+ 3 SYSTEMPATH\View\View.php(227): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1173): CodeIgniter\View\View->render('admin/dashboard', [], true)
+ 5 APPPATH\Controllers\Admin.php(38): view('admin/dashboard', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Admin->dashboard()
+ 7 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin))
+ 8 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+12 SYSTEMPATH\rewrite.php(44): require_once('D:\\certificate_verification\\public\\index.php')
+CRITICAL - 2025-06-06 17:04:30 --> ErrorException: Undefined array key "work_dates"
+[Method: GET, Route: admin/view_certificate/3]
+in APPPATH\Views\admin\view_certificate.php on line 131.
+ 1 APPPATH\Views\admin\view_certificate.php(131): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "work_dates"', 'D:\\certificate_verification\\app\\Views\\admin\\view_certificate.php', 131)
+ 2 SYSTEMPATH\View\View.php(224): include('D:\\certificate_verification\\app\\Views\\admin\\view_certificate.php')
+ 3 SYSTEMPATH\View\View.php(227): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1173): CodeIgniter\View\View->render('admin/view_certificate', [], true)
+ 5 APPPATH\Controllers\Admin.php(56): view('admin/view_certificate', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Admin->viewCertificate('3')
+ 7 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin))
+ 8 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+12 SYSTEMPATH\rewrite.php(44): require_once('D:\\certificate_verification\\public\\index.php')
+ERROR - 2025-06-06 17:10:46 --> mysqli_sql_exception: Incorrect table definition; there can be only one auto column and it must be defined as a key in D:\certificate_verification\system\Database\MySQLi\Connection.php:327
+Stack trace:
+#0 D:\certificate_verification\system\Database\MySQLi\Connection.php(327): mysqli->query('CREATE TABLE `c...', 0)
+#1 D:\certificate_verification\system\Database\BaseConnection.php(738): CodeIgniter\Database\MySQLi\Connection->execute('CREATE TABLE `c...')
+#2 D:\certificate_verification\system\Database\BaseConnection.php(652): CodeIgniter\Database\BaseConnection->simpleQuery('CREATE TABLE `c...')
+#3 D:\certificate_verification\system\Database\Forge.php(570): CodeIgniter\Database\BaseConnection->query('CREATE TABLE `c...')
+#4 D:\certificate_verification\app\Database\Migrations\2024-03-20-000007_fix_certificates_table_structure.php(65): CodeIgniter\Database\Forge->createTable('certificates')
+#5 D:\certificate_verification\system\Database\MigrationRunner.php(876): App\Database\Migrations\FixCertificatesTableStructure->up()
+#6 D:\certificate_verification\system\Database\MigrationRunner.php(182): CodeIgniter\Database\MigrationRunner->migrate('up', Object(stdClass))
+#7 D:\certificate_verification\system\Commands\Database\Migrate.php(85): CodeIgniter\Database\MigrationRunner->latest(NULL)
+#8 D:\certificate_verification\system\CLI\Commands.php(74): CodeIgniter\Commands\Database\Migrate->run(Array)
+#9 D:\certificate_verification\system\CLI\Console.php(47): CodeIgniter\CLI\Commands->run('migrate', Array)
+#10 D:\certificate_verification\system\Boot.php(360): CodeIgniter\CLI\Console->run()
+#11 D:\certificate_verification\system\Boot.php(104): CodeIgniter\Boot::runCommand(Object(CodeIgniter\CLI\Console))
+#12 D:\certificate_verification\spark(87): CodeIgniter\Boot::bootSpark(Object(Config\Paths))
+#13 {main}
+ERROR - 2025-06-06 17:41:20 --> mysqli_sql_exception: Unknown table 'certificate_verification.certificates' in D:\certificate_verification\system\Database\MySQLi\Connection.php:327
+Stack trace:
+#0 D:\certificate_verification\system\Database\MySQLi\Connection.php(327): mysqli->query('DROP TABLE `cer...', 0)
+#1 D:\certificate_verification\system\Database\BaseConnection.php(738): CodeIgniter\Database\MySQLi\Connection->execute('DROP TABLE `cer...')
+#2 D:\certificate_verification\system\Database\BaseConnection.php(652): CodeIgniter\Database\BaseConnection->simpleQuery('DROP TABLE `cer...')
+#3 D:\certificate_verification\system\Database\Forge.php(663): CodeIgniter\Database\BaseConnection->query('DROP TABLE `cer...')
+#4 D:\certificate_verification\app\Database\Migrations\2024-03-20-000007_fix_certificates_table_structure.php(69): CodeIgniter\Database\Forge->dropTable('certificates')
+#5 D:\certificate_verification\system\Database\MigrationRunner.php(876): App\Database\Migrations\FixCertificatesTableStructure->down()
+#6 D:\certificate_verification\system\Database\MigrationRunner.php(289): CodeIgniter\Database\MigrationRunner->migrate('down', Object(stdClass))
+#7 D:\certificate_verification\system\Commands\Database\MigrateRollback.php(101): CodeIgniter\Database\MigrationRunner->regress(0)
+#8 D:\certificate_verification\system\CLI\Commands.php(74): CodeIgniter\Commands\Database\MigrateRollback->run(Array)
+#9 D:\certificate_verification\system\CLI\BaseCommand.php(119): CodeIgniter\CLI\Commands->run('migrate:rollbac...', Array)
+#10 D:\certificate_verification\system\Commands\Database\MigrateRefresh.php(86): CodeIgniter\CLI\BaseCommand->call('migrate:rollbac...', Array)
+#11 D:\certificate_verification\system\CLI\Commands.php(74): CodeIgniter\Commands\Database\MigrateRefresh->run(Array)
+#12 D:\certificate_verification\system\CLI\Console.php(47): CodeIgniter\CLI\Commands->run('migrate:refresh', Array)
+#13 D:\certificate_verification\system\Boot.php(360): CodeIgniter\CLI\Console->run()
+#14 D:\certificate_verification\system\Boot.php(104): CodeIgniter\Boot::runCommand(Object(CodeIgniter\CLI\Console))
+#15 D:\certificate_verification\spark(87): CodeIgniter\Boot::bootSpark(Object(Config\Paths))
+#16 {main}
+ERROR - 2025-06-06 17:44:23 --> mysqli_sql_exception: Unknown table 'certificate_verification.certificates' in D:\certificate_verification\system\Database\MySQLi\Connection.php:327
+Stack trace:
+#0 D:\certificate_verification\system\Database\MySQLi\Connection.php(327): mysqli->query('DROP TABLE `cer...', 0)
+#1 D:\certificate_verification\system\Database\BaseConnection.php(738): CodeIgniter\Database\MySQLi\Connection->execute('DROP TABLE `cer...')
+#2 D:\certificate_verification\system\Database\BaseConnection.php(652): CodeIgniter\Database\BaseConnection->simpleQuery('DROP TABLE `cer...')
+#3 D:\certificate_verification\system\Database\Forge.php(663): CodeIgniter\Database\BaseConnection->query('DROP TABLE `cer...')
+#4 D:\certificate_verification\app\Database\Migrations\2024-03-20-000007_fix_certificates_table_structure.php(69): CodeIgniter\Database\Forge->dropTable('certificates')
+#5 D:\certificate_verification\system\Database\MigrationRunner.php(876): App\Database\Migrations\FixCertificatesTableStructure->down()
+#6 D:\certificate_verification\system\Database\MigrationRunner.php(289): CodeIgniter\Database\MigrationRunner->migrate('down', Object(stdClass))
+#7 D:\certificate_verification\system\Commands\Database\MigrateRollback.php(101): CodeIgniter\Database\MigrationRunner->regress(0)
+#8 D:\certificate_verification\system\CLI\Commands.php(74): CodeIgniter\Commands\Database\MigrateRollback->run(Array)
+#9 D:\certificate_verification\system\CLI\BaseCommand.php(119): CodeIgniter\CLI\Commands->run('migrate:rollbac...', Array)
+#10 D:\certificate_verification\system\Commands\Database\MigrateRefresh.php(86): CodeIgniter\CLI\BaseCommand->call('migrate:rollbac...', Array)
+#11 D:\certificate_verification\system\CLI\Commands.php(74): CodeIgniter\Commands\Database\MigrateRefresh->run(Array)
+#12 D:\certificate_verification\system\CLI\Console.php(47): CodeIgniter\CLI\Commands->run('migrate:refresh', Array)
+#13 D:\certificate_verification\system\Boot.php(360): CodeIgniter\CLI\Console->run()
+#14 D:\certificate_verification\system\Boot.php(104): CodeIgniter\Boot::runCommand(Object(CodeIgniter\CLI\Console))
+#15 D:\certificate_verification\spark(87): CodeIgniter\Boot::bootSpark(Object(Config\Paths))
+#16 {main}
