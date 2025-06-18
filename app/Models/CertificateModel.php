@@ -66,4 +66,37 @@ class CertificateModel extends Model
 
     protected $skipValidation = false;
     protected $cleanValidationRules = true;
+
+    public function getPaginatedCertificates($limit, $offset, $search = null)
+    {
+        $builder = $this->builder();
+        
+        if ($search) {
+            $builder->groupStart()
+                    ->like('certificate_number', $search)
+                    ->orLike('name', $search)
+                    ->orLike('course', $search)
+                    ->groupEnd();
+        }
+        
+        return $builder->orderBy('id', 'DESC')
+                      ->limit($limit, $offset)
+                      ->get()
+                      ->getResultArray();
+    }
+
+    public function getTotalRecords($search = null)
+    {
+        $builder = $this->builder();
+        
+        if ($search) {
+            $builder->groupStart()
+                    ->like('certificate_number', $search)
+                    ->orLike('name', $search)
+                    ->orLike('course', $search)
+                    ->groupEnd();
+        }
+        
+        return $builder->countAllResults();
+    }
 } 

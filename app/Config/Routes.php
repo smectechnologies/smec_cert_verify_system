@@ -7,39 +7,66 @@ use CodeIgniter\Router\RouteCollection;
 /**
  * @var RouteCollection $routes
  */
+$routes = Services::routes();
+
+/*
+ * --------------------------------------------------------------------
+ * Router Setup
+ * --------------------------------------------------------------------
+ */
 $routes->setDefaultNamespace('App\Controllers');
 $routes->setDefaultController('Home');
 $routes->setDefaultMethod('index');
 $routes->setTranslateURIDashes(false);
 $routes->set404Override();
 
-// Auth routes
-$routes->get('admin_login', 'Auth::login');
-$routes->post('admin_login', 'Auth::authenticate');
-$routes->get('logout', 'Auth::logout');
-
-// Admin routes
-$routes->group('admin', ['filter' => 'auth'], function($routes) {
-    $routes->get('dashboard', 'Admin::dashboard');
-    $routes->get('add_certificate', 'Admin::addCertificate');
-    $routes->post('add_certificate', 'Admin::addCertificate');
-    $routes->get('edit_certificate/(:num)', 'Admin::editCertificate/$1');
-    $routes->post('edit_certificate/(:num)', 'Admin::editCertificate/$1');
-    $routes->post('delete_certificate/(:num)', 'Admin::deleteCertificate/$1');
-    $routes->post('verify_certificate/(:num)', 'Admin::verifyCertificate/$1');
-    $routes->get('view_certificate/(:num)', 'Admin::viewCertificate/$1');
-    $routes->get('test_database', 'Admin::testDatabase');
-});
+/*
+ * --------------------------------------------------------------------
+ * Route Definitions
+ * --------------------------------------------------------------------
+ */
 
 // Public routes
 $routes->get('/', 'Home::index');
-$routes->get('verify/(:any)', 'Home::verify/$1');
+$routes->get('/verify', 'Certificate::verify');
+$routes->post('/certificate/verify', 'Certificate::verify');
 
-// Home routes
-$routes->get('certificate/verify', 'Home::verifyCertificate');
+// Admin login routes
+$routes->get('admin_login', 'Login::index');
+$routes->post('admin_login', 'Login::auth');
+$routes->get('logout', 'Login::logout');
 
-// Serve uploaded files
-$routes->get('uploads/certificates/(:segment)', 'Home::serveCertificate/$1');
+// Admin dashboard routes (protected)
+$routes->group('admin', ['filter' => 'auth'], function($routes) {
+    // Dashboard
+    $routes->get('dashboard', 'Admin::dashboard');
+    
+    // Certificate management
+    $routes->get('add', 'Admin::addCertificate');
+    $routes->post('add', 'Admin::addCertificate');
+    $routes->get('edit/(:num)', 'Admin::editCertificate/$1');
+    $routes->post('edit/(:num)', 'Admin::editCertificate/$1');
+    $routes->get('view/(:num)', 'Admin::viewCertificate/$1');
+    $routes->get('verify/(:num)', 'Admin::verifyCertificate/$1');
+    $routes->get('delete/(:num)', 'Admin::deleteCertificate/$1');
+});
+
+/*
+ * --------------------------------------------------------------------
+ * Additional Routing
+ * --------------------------------------------------------------------
+ *
+ * There will often be times that you need additional routing and you
+ * need it to be able to override any defaults in this file. Environment
+ * based routes is one such time. require() additional route files here
+ * to make that happen.
+ *
+ * You will have access to the $routes object within that file without
+ * needing to reload it.
+ */
+if (is_file(APPPATH . 'Config/' . ENVIRONMENT . '/Routes.php')) {
+    require APPPATH . 'Config/' . ENVIRONMENT . '/Routes.php';
+}
 
 // Test database connection
 $routes->get('test-db', function() {

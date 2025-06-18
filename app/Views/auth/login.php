@@ -78,7 +78,7 @@
                         </div>
                     <?php endif; ?>
 
-                    <form action="<?= base_url('admin_login') ?>" method="post">
+                    <form action="<?= base_url('admin_login/authenticate') ?>" method="post">
                         <?= csrf_field() ?>
                         <div class="mb-3">
                             <label for="username" class="form-label">Username</label>

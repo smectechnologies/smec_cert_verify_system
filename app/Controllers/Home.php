@@ -2,29 +2,38 @@
 
 namespace App\Controllers;
 
+use App\Models\CertificateModel;
+
 class Home extends BaseController
 {
+    protected $certificateModel;
+
+    public function __construct()
+    {
+        $this->certificateModel = new CertificateModel();
+    }
+
     public function index()
     {
         return view('home');
     }
 
-    public function verifyCertificate()
+    public function verify()
     {
-        $certificateNumber = $this->request->getGet('certificate_number');
-        
-        // Load the Certificate model
-        $certificateModel = new \App\Models\CertificateModel();
-        
-        // Search for the certificate
-        $certificate = $certificateModel->where('certificate_number', $certificateNumber)
-                                      ->first();
-        
-        if ($certificate) {
-            return view('certificate_result', ['certificate' => $certificate]);
-        } else {
-            return view('certificate_result', ['error' => 'Certificate not found']);
+        // Get certificate number from POST data
+        $certificateNumber = $this->request->getJSON()->certificate_number ?? null;
+
+        if (!$certificateNumber) {
+            return $this->response->setJSON(['error' => 'Please enter a certificate number'])->setStatusCode(400);
         }
+
+        $certificate = $this->certificateModel->where('certificate_number', $certificateNumber)->first();
+        
+        if (!$certificate) {
+            return $this->response->setJSON(['error' => 'Certificate not found'])->setStatusCode(404);
+        }
+
+        return $this->response->setJSON($certificate);
     }
 
     public function serveCertificate($filename)

@@ -21,7 +21,7 @@ class App extends BaseConfig
      * explicitly and never rely on auto-guessing, especially in production
      * environments.
      */
-    public string $baseURL = 'http://localhost:8080/';
+    public $baseURL = 'http://localhost:8080/';
 
     /**
      * Allowed Hostnames in the Site URL other than the hostname in the baseURL.
@@ -45,7 +45,7 @@ class App extends BaseConfig
      * something else. If you are using mod_rewrite to remove the page set this
      * variable so that it is blank.
      */
-    public string $indexPage = '';
+    public $indexPage = '';
 
     /**
      * --------------------------------------------------------------------------
@@ -62,7 +62,7 @@ class App extends BaseConfig
      *
      * WARNING: If you set this to 'PATH_INFO', URIs will always be URL-decoded!
      */
-    public string $uriProtocol = 'REQUEST_URI';
+    public $uriProtocol = 'REQUEST_URI';
 
     /*
     |--------------------------------------------------------------------------
@@ -98,7 +98,7 @@ class App extends BaseConfig
      * strings (like currency markers, numbers, etc), that your program
      * should run under for this request.
      */
-    public string $defaultLocale = 'en';
+    public $defaultLocale = 'en';
 
     /**
      * --------------------------------------------------------------------------
@@ -110,7 +110,7 @@ class App extends BaseConfig
      *
      * If false, no automatic detection will be performed.
      */
-    public bool $negotiateLocale = false;
+    public $negotiateLocale = false;
 
     /**
      * --------------------------------------------------------------------------
@@ -123,7 +123,7 @@ class App extends BaseConfig
      *
      * @var string[]
      */
-    public array $supportedLocales = ['en'];
+    public $supportedLocales = ['en'];
 
     /**
      * --------------------------------------------------------------------------
@@ -133,7 +133,7 @@ class App extends BaseConfig
      * The default timezone that will be used in your application to display
      * dates with the date helper, and can be retrieved through app_timezone()
      */
-    public string $appTimezone = 'Asia/Kolkata';
+    public $appTimezone = 'Asia/Kolkata';
 
     /**
      * --------------------------------------------------------------------------
@@ -145,7 +145,7 @@ class App extends BaseConfig
      *
      * @see http://php.net/htmlspecialchars for a list of supported charsets.
      */
-    public string $charset = 'UTF-8';
+    public $charset = 'UTF-8';
 
     /**
      * --------------------------------------------------------------------------
@@ -157,7 +157,7 @@ class App extends BaseConfig
      * secure, the user will be redirected to a secure version of the page
      * and the HTTP Strict Transport Security header will be set.
      */
-    public bool $forceGlobalSecureRequests = false;
+    public $forceGlobalSecureRequests = false;
 
     /**
      * --------------------------------------------------------------------------
@@ -172,7 +172,7 @@ class App extends BaseConfig
      *
      * @deprecated use Config\Session::$driver instead.
      */
-    public string $sessionDriver = 'CodeIgniter\Session\Handlers\FileHandler';
+    public $sessionDriver = 'CodeIgniter\Session\Handlers\FileHandler';
 
     /**
      * --------------------------------------------------------------------------
@@ -183,7 +183,7 @@ class App extends BaseConfig
      *
      * @deprecated use Config\Session::$cookieName  instead.
      */
-    public string $sessionCookieName = 'ci_session';
+    public $sessionCookieName = 'ci_session';
 
     /**
      * --------------------------------------------------------------------------
@@ -195,7 +195,7 @@ class App extends BaseConfig
      *
      * @deprecated use Config\Session::$expiration instead.
      */
-    public int $sessionExpiration = 7200;
+    public $sessionExpiration = 7200;
 
     /**
      * --------------------------------------------------------------------------
@@ -214,7 +214,7 @@ class App extends BaseConfig
      *
      * @deprecated use Config\Session::$savePath instead.
      */
-    public string $sessionSavePath = WRITEPATH . 'session';
+    public $sessionSavePath = WRITEPATH . 'session';
 
     /**
      * --------------------------------------------------------------------------
@@ -228,7 +228,7 @@ class App extends BaseConfig
      *
      * @deprecated use Config\Session::$matchIP instead.
      */
-    public bool $sessionMatchIP = false;
+    public $sessionMatchIP = false;
 
     /**
      * --------------------------------------------------------------------------
@@ -239,7 +239,7 @@ class App extends BaseConfig
      *
      * @deprecated use Config\Session::$timeToUpdate instead.
      */
-    public int $sessionTimeToUpdate = 300;
+    public $sessionTimeToUpdate = 300;
 
     /**
      * --------------------------------------------------------------------------
@@ -252,7 +252,7 @@ class App extends BaseConfig
      *
      * @deprecated use Config\Session::$regenerateDestroy instead.
      */
-    public bool $sessionRegenerateDestroy = false;
+    public $sessionRegenerateDestroy = false;
 
     /**
      * --------------------------------------------------------------------------
@@ -365,7 +365,7 @@ class App extends BaseConfig
      *
      * @var array<string, string>
      */
-    public array $proxyIPs = [];
+    public $proxyIPs = [];
 
     /**
      * --------------------------------------------------------------------------
@@ -468,5 +468,5 @@ class App extends BaseConfig
      * @see http://www.html5rocks.com/en/tutorials/security/content-security-policy/
      * @see http://www.w3.org/TR/CSP/
      */
-    public bool $CSPEnabled = false;
+    public $CSPEnabled = false;
 }

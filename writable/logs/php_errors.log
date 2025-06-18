@@ -22,3 +22,4 @@ Stack trace:
 #3 D:\certificate_verification\system\rewrite.php(44): require_once('D:\\certificate_...')
 #4 {main}
   thrown in D:\certificate_verification\app\Config\Boot\production.php on line 48
+[11-Jun-2025 13:34:29 Asia/Kolkata] PHP Fatal error:  Cannot redeclare class App\Database\Migrations\FixCertificatesTable (previously declared in /home/abhijith/projects/exp_cert_verify/app/Database/Migrations/2024-03-20-000005_fix_certificates_table.php:7) in /home/abhijith/projects/exp_cert_verify/app/Database/Migrations/2024-03-20-000008_fix_certificates_table.php on line 7

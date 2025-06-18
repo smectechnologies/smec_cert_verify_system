@@ -89,7 +89,7 @@ class Session extends BaseConfig
      * when auto-regenerating the session ID. When set to FALSE, the data
      * will be later deleted by the garbage collector.
      */
-    public bool $regenerateDestroy = false;
+    public bool $regenerateDestroy = true;
 
     /**
      * --------------------------------------------------------------------------
@@ -124,4 +124,85 @@ class Session extends BaseConfig
      * seconds.
      */
     public int $lockMaxRetries = 300;
+
+    /**
+     * --------------------------------------------------------------------------
+     * Session Cookie Path
+     * --------------------------------------------------------------------------
+     *
+     * The path where the session cookie is stored.
+     */
+    public string $cookiePath = '/';
+
+    /**
+     * --------------------------------------------------------------------------
+     * Session Cookie Domain
+     * --------------------------------------------------------------------------
+     *
+     * The domain where the session cookie is stored.
+     */
+    public string $cookieDomain = '';
+
+    /**
+     * --------------------------------------------------------------------------
+     * Session Cookie Secure
+     * --------------------------------------------------------------------------
+     *
+     * Whether to set the session cookie as secure.
+     */
+    public bool $cookieSecure = false;
+
+    /**
+     * --------------------------------------------------------------------------
+     * Session Cookie HTTP Only
+     * --------------------------------------------------------------------------
+     *
+     * Whether to set the session cookie as HTTP only.
+     */
+    public bool $cookieHTTPOnly = true;
+
+    /**
+     * --------------------------------------------------------------------------
+     * Session Cookie SameSite
+     * --------------------------------------------------------------------------
+     *
+     * The SameSite attribute for the session cookie.
+     */
+    public string $cookieSameSite = 'Lax';
+
+    /**
+     * --------------------------------------------------------------------------
+     * Session Cookie Prefix
+     * --------------------------------------------------------------------------
+     *
+     * The prefix to use for session cookies.
+     */
+    public string $cookiePrefix = '';
+
+    /**
+     * --------------------------------------------------------------------------
+     * Session Cookie Raw
+     * --------------------------------------------------------------------------
+     *
+     * Whether to use raw cookie values.
+     */
+    public bool $cookieRaw = false;
+
+    /**
+     * --------------------------------------------------------------------------
+     * Session Cookie Expiration
+     * --------------------------------------------------------------------------
+     *
+     * The number of seconds the session cookie should last.
+     */
+    public int $cookieExpiration = 0;
+
+    /**
+     * --------------------------------------------------------------------------
+     * Session Cookie SameSite
+     * --------------------------------------------------------------------------
+     *
+     * The SameSite attribute for the session cookie.
+     */
+    public ?string $samesite = 'Lax';
 }
